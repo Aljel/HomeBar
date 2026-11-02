@@ -1,0 +1,199 @@
+.recipe {
+  max-width: calc(920px + 2 * var(--gutter));
+}
+.recipe-top {
+  margin: -8px 0 12px -10px;
+}
+.recipe-article {
+  overflow: hidden;
+}
+.recipe-photo {
+  border-bottom: 1px solid var(--line);
+}
+.recipe-photo .glass-art svg {
+  height: 58%;
+}
+.sk-gap {
+  margin-top: 12px;
+}
+
+.recipe-head {
+  padding: clamp(22px, 4vw, 36px) clamp(20px, 4vw, 40px) 0;
+}
+.recipe-head__title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 12px;
+}
+.recipe-head__fav {
+  color: var(--heart);
+}
+.recipe-head__fav svg {
+  width: 22px;
+  height: 22px;
+}
+.recipe-head__desc {
+  font-size: 1.0625rem;
+  color: var(--ink-2);
+  max-width: 60ch;
+}
+.recipe-head__parent {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+.recipe-head__parent svg {
+  width: 16px;
+  height: 16px;
+}
+.recipe-head__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.recipe-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 16px 0 0;
+  border-top: 1px solid var(--line);
+}
+.recipe-actions .is-fav {
+  color: var(--heart);
+  border-color: rgb(194 87 74 / 0.45);
+}
+.recipe-actions .is-fav svg {
+  fill: currentColor;
+}
+.recipe-actions__del {
+  margin-left: auto;
+}
+
+.recipe-section {
+  padding: clamp(24px, 4vw, 36px) clamp(20px, 4vw, 40px);
+}
+.recipe-h2 {
+  margin: 0;
+  font-size: 1.125rem;
+}
+.recipe-ings {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px;
+  border-top: 1px solid var(--line);
+  margin-top: 28px;
+}
+@media (min-width: 760px) {
+  .recipe-ings {
+    grid-template-columns: minmax(0, 1fr) 220px;
+    gap: 48px;
+  }
+  .recipe-ings__visual {
+    position: sticky;
+    top: calc(var(--header-h) + 24px);
+    align-self: start;
+    padding-top: 56px;
+  }
+}
+.recipe-ings__visual:empty {
+  display: none;
+}
+.recipe-ings__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.recipe-note {
+  margin: 10px 0 0;
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+.recipe-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px 24px;
+  margin: 24px 0 0;
+}
+.recipe-meta dt {
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+.recipe-meta dd {
+  margin: 2px 0 0;
+  font-weight: 500;
+}
+.recipe-method {
+  border-top: 1px solid var(--line);
+}
+.recipe-method .recipe-h2 {
+  margin-bottom: 14px;
+}
+.recipe-method .md {
+  max-width: 64ch;
+}
+.recipe-foot {
+  margin: 28px 0 0;
+  font-size: 0.8125rem;
+  color: var(--faint);
+}
+.recipe-foot a {
+  color: var(--muted);
+}
+.recipe-ings:has(.recipe-ings__visual:empty) {
+  grid-template-columns: minmax(0, 1fr);
+}
+@media (max-width: 600px) {
+  .recipe-actions {
+    gap: 6px;
+  }
+  .recipe-ings__head h2 {
+    flex-basis: 100%;
+    margin-bottom: 4px;
+  }
+  .recipe-ings__head .spacer {
+    display: none;
+  }
+  .recipe-ings__head .segmented {
+    margin-left: auto;
+  }
+  .recipe-photo .glass-art svg {
+    height: 64%;
+  }
+}
+
+/* host: what's missing from the pantry */
+.recipe-stock {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  margin-top: 14px;
+  font-size: 0.875rem;
+}
+.recipe-stock__label {
+  font-weight: 600;
+  color: var(--ink-2);
+}
+.recipe-stock__ok {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  color: var(--ok);
+  font-weight: 500;
+}
+.recipe-stock__ok svg {
+  width: 16px;
+  height: 16px;
+}
+.recipe-stock__link {
+  font-size: 0.8125rem;
+  margin-left: auto;
+}

@@ -1,0 +1,34 @@
+.page-text__title {
+  margin-bottom: 0.6em;
+}
+.page-text__sk {
+  margin-top: 14px;
+}
+.page-text__edit {
+  margin-top: 20px;
+}
+.page-editor {
+  display: grid;
+  gap: 20px;
+}
+.page-editor__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 24px;
+}
+.page-editor__ta {
+  min-height: 320px;
+  font-size: 0.875rem;
+}
+.page-editor__preview {
+  padding: 16px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  background: #fff;
+  min-width: 0;
+  max-height: 520px;
+  overflow: auto;
+}
+.page-editor__preview h2 {
+  font-size: 1.25rem;
+}

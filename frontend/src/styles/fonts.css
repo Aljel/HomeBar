@@ -1,0 +1,7 @@
+/* Bundled via @fontsource so the LAN bar works offline. Each weight file ships latin + cyrillic
+   subsets with unicode-range, so browsers download only what the page uses. */
+@import "@fontsource/manrope/400.css";
+@import "@fontsource/manrope/500.css";
+@import "@fontsource/manrope/600.css";
+@import "@fontsource/cormorant-garamond/500.css";
+@import "@fontsource/cormorant-garamond/600.css";

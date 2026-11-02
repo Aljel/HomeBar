@@ -1,0 +1,66 @@
+.props {
+  margin: 0;
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+}
+.props__glass {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  overflow: visible;
+}
+.props__layer {
+  opacity: 0.75;
+  transition: opacity var(--dur);
+}
+.props.has-active .props__layer {
+  opacity: 0.28;
+}
+.props.has-active .props__layer.is-active {
+  opacity: 1;
+}
+.props__sep {
+  stroke: #fff;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+  opacity: 0.9;
+}
+.props__outline path {
+  fill: none;
+  stroke: var(--ink-2);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+.props__bar {
+  display: flex;
+  gap: 2px;
+  width: 100%;
+  max-width: 240px;
+  height: 6px;
+}
+.props__seg {
+  flex-basis: 0;
+  min-width: 3px;
+  border-radius: 3px;
+  opacity: 0.85;
+  transition: opacity var(--dur);
+}
+.props.has-active .props__seg {
+  opacity: 0.3;
+}
+.props.has-active .props__seg.is-active {
+  opacity: 1;
+}
+.props__caption {
+  min-height: 1.5em;
+  font-size: 0.8125rem;
+  color: var(--muted);
+  text-align: center;
+}
+.props__caption strong {
+  color: var(--ink);
+  font-weight: 600;
+}

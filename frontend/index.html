@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#fbf8f3" />
+    <meta name="color-scheme" content="light" />
+    <meta name="description" content="HomeBar — домашний бар и кухня: коктейли, блюда и меню для гостей." />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>HomeBar · домашний бар</title>
+  </head>
+  <body>
+    <!-- static so the photo starts loading with the HTML, before any JS -->
+    <div class="backdrop" aria-hidden="true">
+      <picture>
+        <source media="(orientation: portrait)" srcset="/bg/home-tall.webp" type="image/webp" width="1080" height="1920" />
+        <img src="/bg/home-wide.webp" alt="" width="2400" height="1350" decoding="async" fetchpriority="low" />
+      </picture>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

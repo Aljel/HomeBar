@@ -1,0 +1,28 @@
+.stepper {
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 1px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.6);
+}
+.stepper .icon-btn {
+  width: 32px;
+  height: 32px;
+}
+.stepper .icon-btn svg {
+  width: 16px;
+  height: 16px;
+}
+.stepper__value {
+  min-width: 4.6em;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+.stepper__unit {
+  font-weight: 400;
+  color: var(--muted);
+}

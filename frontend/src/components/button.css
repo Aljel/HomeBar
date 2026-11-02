@@ -1,0 +1,165 @@
+/* Buttons: quiet and precise. One geometry everywhere — 36px pill, 1px line, 14px medium text. */
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: transparent;
+  color: var(--ink);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition-property: background-color, border-color, color, opacity;
+  transition-duration: var(--dur);
+  transition-timing-function: var(--ease);
+}
+/* 44px hit area without changing the visual height */
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: -4px 0;
+}
+.btn svg {
+  width: 16px;
+  height: 16px;
+  flex: none;
+}
+.btn:has(> svg:first-child) {
+  padding-left: 13px;
+}
+.btn:has(> svg:last-child):not(:has(> svg:first-child)) {
+  padding-right: 13px;
+}
+.btn__label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.btn:hover:not(:disabled):not([aria-disabled="true"]) {
+  background: var(--hover);
+  border-color: var(--line-ink);
+}
+.btn:active:not(:disabled):not([aria-disabled="true"]) {
+  background: var(--press);
+}
+.btn:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn--primary {
+  background: var(--green-700);
+  border-color: var(--green-700);
+  color: #f7f4ee;
+}
+.btn--primary:hover:not(:disabled):not([aria-disabled="true"]) {
+  background: var(--green-800);
+  border-color: var(--green-800);
+}
+.btn--primary:active:not(:disabled):not([aria-disabled="true"]) {
+  background: #1d3024;
+}
+
+.btn--quiet {
+  border-color: transparent;
+  color: var(--ink-2);
+}
+.btn--quiet:hover:not(:disabled) {
+  border-color: transparent;
+}
+
+.btn--danger {
+  color: var(--error);
+  border-color: rgb(168 58 58 / 0.4);
+}
+.btn--danger:hover:not(:disabled):not([aria-disabled="true"]) {
+  background: var(--error-bg);
+  border-color: var(--error);
+}
+
+.btn--lg {
+  height: 44px;
+  font-size: 0.9375rem;
+  padding: 0 20px;
+}
+.btn--lg::before {
+  inset: 0;
+}
+.btn--block {
+  display: flex;
+  width: 100%;
+}
+
+/* ---------- icon-only: 36px circle ---------- */
+.icon-btn {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  background: transparent;
+  color: var(--ink-2);
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  transition-property: background-color, border-color, color, opacity;
+  transition-duration: var(--dur);
+  transition-timing-function: var(--ease);
+}
+.icon-btn::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+}
+.icon-btn svg {
+  width: 18px;
+  height: 18px;
+}
+.icon-btn--plain {
+  border-color: transparent;
+}
+.icon-btn:hover:not(:disabled) {
+  background: var(--hover);
+  border-color: var(--line-ink);
+  color: var(--ink);
+}
+.icon-btn--plain:hover:not(:disabled) {
+  border-color: transparent;
+}
+.icon-btn:active:not(:disabled) {
+  background: var(--press);
+}
+.icon-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.icon-btn--heart[aria-pressed="true"] {
+  color: var(--heart);
+  border-color: rgb(194 87 74 / 0.45);
+}
+.icon-btn--heart:hover:not(:disabled) {
+  color: var(--heart);
+}
+.icon-btn--danger:hover:not(:disabled) {
+  color: var(--error);
+  border-color: rgb(168 58 58 / 0.5);
+  background: var(--error-bg);
+}

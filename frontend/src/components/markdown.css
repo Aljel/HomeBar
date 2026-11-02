@@ -1,0 +1,87 @@
+.md {
+  overflow-wrap: anywhere;
+  line-height: 1.7;
+}
+.md > :first-child {
+  margin-top: 0;
+}
+.md > :last-child {
+  margin-bottom: 0;
+}
+.md h1,
+.md h2,
+.md h3 {
+  margin: 1.4em 0 0.5em;
+}
+.md h1 {
+  font-size: 1.5rem;
+}
+.md h2 {
+  font-size: 1.25rem;
+}
+.md h3 {
+  font-size: 1.0625rem;
+}
+.md ul,
+.md ol {
+  padding-left: 1.4em;
+  margin: 0 0 1em;
+}
+.md li {
+  margin: 0.3em 0;
+  padding-left: 0.2em;
+}
+.md li::marker {
+  color: var(--wood);
+}
+.md ol li::marker {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  font-size: 0.9em;
+}
+.md blockquote {
+  margin: 1.2em 0;
+  padding: 0.1em 0 0.1em 1em;
+  border-left: 1px solid var(--wood);
+  color: var(--ink-2);
+  font-style: italic;
+}
+.md code {
+  font-size: 0.88em;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+}
+.md pre {
+  overflow-x: auto;
+  padding: 12px;
+  border-radius: var(--radius-m);
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+}
+.md pre code {
+  border: 0;
+  padding: 0;
+}
+.md img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-m);
+}
+.md hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 1.8em 0;
+}
+.md table {
+  border-collapse: collapse;
+  display: block;
+  overflow-x: auto;
+}
+.md th,
+.md td {
+  border-bottom: 1px solid var(--line);
+  padding: 6px 12px 6px 0;
+  text-align: left;
+}

@@ -1,0 +1,62 @@
+:root {
+  color-scheme: light;
+
+  /* surfaces */
+  --paper: #fbf8f3;
+  --paper-2: #f4efe7;
+  --paper-3: #ece5da;
+  --surface: rgb(251 248 243 / 0.96);
+
+  /* ink */
+  --ink: #2a241e;
+  --ink-2: #4a4037;
+  --muted: #6f655a;
+  --faint: #93897d;
+
+  /* lines */
+  --line: rgb(58 46 34 / 0.14);
+  --line-strong: rgb(58 46 34 / 0.28);
+  --line-ink: rgb(58 46 34 / 0.55);
+  --hover: rgb(58 46 34 / 0.05);
+  --press: rgb(58 46 34 / 0.09);
+
+  /* accents */
+  --wood: #a0714a;
+  --wood-soft: #e9dccb;
+  --green-700: #2f4a3a;
+  --green-800: #243a2d;
+  --green-500: #5e7d5f;
+  --green-100: #e6ece3;
+  --green-50: #f0f3ee;
+  --sand-100: #f1e8db;
+  --heart: #c2574a;
+  --error: #a83a3a;
+  --error-bg: #f8e9e6;
+  --ok: #3f6b4b;
+  --ok-bg: #e5eee6;
+  --warn: #8a5a1c;
+  --warn-bg: #f6ecdc;
+
+  --focus: #2f4a3a;
+
+  --font-sans: "Manrope", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-serif: "Cormorant Garamond", "Cormorant", Georgia, "Times New Roman", serif;
+
+  --radius-s: 8px;
+  --radius-m: 10px;
+  --radius-l: 16px;
+  --radius-xl: 20px;
+
+  --shadow-s: 0 1px 2px rgb(42 36 30 / 0.06);
+  --shadow-m: 0 1px 2px rgb(42 36 30 / 0.05), 0 8px 24px -12px rgb(42 36 30 / 0.22);
+  --shadow-l: 0 2px 6px rgb(42 36 30 / 0.06), 0 24px 48px -20px rgb(42 36 30 / 0.3);
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur: 180ms;
+  --dur-slow: 260ms;
+
+  --page-max: 1180px;
+  --feed-max: 640px;
+  --gutter: clamp(16px, 4vw, 32px);
+  --header-h: 56px;
+}

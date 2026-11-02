@@ -1,0 +1,12 @@
+[Unit]
+Description=Announce homebar.local in the home network (mDNS via avahi)
+After=network-online.target
+
+[Service]
+Environment=MDNS_NAME=homebar.local
+ExecStart=/usr/bin/python3 %h/Documents/Study/HomeBar/deploy/homebar-mdns.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target

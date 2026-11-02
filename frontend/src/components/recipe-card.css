@@ -1,0 +1,217 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-l);
+  overflow: hidden;
+  transition: border-color var(--dur);
+}
+.card:hover {
+  border-color: var(--line-strong);
+}
+.card--feed {
+  /* long feeds: skip layout/paint of off-screen cards */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 540px;
+}
+.card__media {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  border-bottom: 1px solid var(--line);
+}
+.card__media .img-box img {
+  transition: transform 600ms var(--ease);
+}
+.card:hover .card__media .img-box img {
+  transform: scale(1.015);
+}
+.card__body {
+  display: grid;
+  gap: 6px;
+  padding: 18px 20px 6px;
+  min-width: 0;
+}
+.card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+.card__glass::before {
+  content: "·";
+  margin-right: 10px;
+}
+.card__title {
+  margin: 0;
+  font-size: 1.1875rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+.card__title a,
+.card__title-btn {
+  color: inherit;
+  text-decoration: none;
+}
+.card__title a:hover,
+.card__title-btn:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--line-ink);
+}
+.card__title-btn {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.card__desc {
+  margin: 0;
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card__ings {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card__foot {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+  padding: 10px 14px 14px 20px;
+}
+.card__tags {
+  display: flex;
+  gap: 6px;
+  min-width: 0;
+  overflow: hidden;
+}
+.card__actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+}
+.card__actions--start {
+  margin-left: -8px;
+}
+.card__actions--start:empty {
+  display: none;
+}
+.card__fav {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  color: var(--heart);
+}
+.card__fav svg {
+  width: 16px;
+  height: 16px;
+}
+.tag--web {
+  color: var(--green-700);
+  border-color: rgb(47 74 58 / 0.3);
+  background: var(--green-50);
+}
+
+/* ---------- compact (catalogue grid) ---------- */
+.card--compact .card__body {
+  padding: 14px 16px 4px;
+  gap: 4px;
+}
+.card--compact .card__title {
+  font-size: 1rem;
+}
+.card--compact .card__desc {
+  display: none;
+}
+.card--compact .card__foot {
+  padding: 6px 10px 10px 16px;
+}
+
+@media (max-width: 639px) {
+  /* phones: list rows — thumbnail left, text right, whole row is the link */
+  .card--compact {
+    display: grid;
+    grid-template-columns: 84px 1fr auto;
+    align-items: center;
+    gap: 14px;
+    padding: 10px;
+    border-radius: 14px;
+  }
+  .card--compact .card__media {
+    border: 0;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .card--compact .card__media .img-box {
+    aspect-ratio: 1 / 1 !important;
+  }
+  .card--compact .card__body {
+    padding: 0;
+  }
+  .card--compact .card__foot {
+    padding: 0;
+    margin: 0;
+  }
+  .card--compact .card__foot .icon-btn:not(:last-child),
+  .card--compact .card__foot .btn {
+    display: none;
+  }
+  .card--compact .card__fav {
+    width: 20px;
+  }
+  .card--compact .card__title a::after,
+  .card--compact .card__title-btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+  .card--compact .card__actions {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.card--skeleton {
+  pointer-events: none;
+}
+.card--skeleton .card__body {
+  padding-bottom: 20px;
+}
+
+/* big catalogue (≈1400 recipes): skip off-screen cards */
+.card--compact {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 320px;
+}
+@media (max-width: 639px) {
+  .card--compact {
+    contain-intrinsic-size: auto 106px;
+  }
+}

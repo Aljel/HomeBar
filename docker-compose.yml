@@ -1,0 +1,25 @@
+services:
+  homebar:
+    build: .
+    image: homebar:latest
+    container_name: homebar
+    restart: unless-stopped
+    ports:
+      - "${HOMEBAR_HTTP_PORT:-80}:8080"  # http://homebar.local  (short address, see deploy/homebar-mdns.py)
+      - "${HOMEBAR_PORT:-8080}:8080"     # http://<host-ip>:8080 still works
+    environment:
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-homebar}
+      TZ: ${TZ:-Europe/Moscow}
+      RUST_LOG: ${RUST_LOG:-info}
+      DISCOVER_ENABLED: ${DISCOVER_ENABLED:-true}
+    volumes:
+      - homebar-data:/data   # SQLite database + uploaded photos
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+
+volumes:
+  homebar-data:
