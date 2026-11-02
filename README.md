@@ -1,11 +1,7 @@
-# HomeBar · Ночной гербарий
+# HomeBar · МАГНУМ-СЛОПУС
 
-Личный сайт-бар: рецепты и пропорции, вариации с историей версий, меню для гостей с живой очередью заказов
+Личный сайт чтобы удобно хранить рецепты и пропорции, вариации с историей версий, меню для гостей с живой очередью заказов, чтобы жить было легче.
 и «Попробуйте» — случайные рецепты из TheCocktailDB / TheMealDB.
-
-- **backend/** — Rust (axum, sqlx + SQLite, reqwest/rustls). Отдаёт API и собранный фронтенд.
-- **frontend/** — React 19 + TypeScript + Vite, TanStack Query, без UI-китов.
-- **docs/API.md** — контракт API, **docs/DESIGN.md** — дизайн-направление.
 
 ## Запуск (Docker)
 
@@ -53,19 +49,3 @@ docker run --rm -v homebar_homebar-data:/data -v "$PWD":/backup alpine tar czf /
   английском сопоставляются автоматически (словарь `backend/data/ingredients.json`, ~650 ингредиентов).
 - Кнопка «Загрузить базу» на той же странице импортирует ~580 коктейлей (TheCocktailDB) и ~790 блюд (TheMealDB),
   повторный запуск докачивает только новое.
-
-## Разработка
-
-```bash
-cd backend  && DATA_DIR=./data cargo run          # API на :8080
-cd frontend && pnpm install && pnpm dev           # Vite проксирует /api и /uploads на :8080
-```
-
-Проверки: `cargo fmt --check && cargo clippy --all-targets -- -D warnings && cargo test`,
-`pnpm typecheck && pnpm lint && pnpm test && pnpm build` (см. scripts в `frontend/package.json`).
-
-## Перед выходом в интернет
-
-Сейчас рассчитано на домашнюю сеть. Для публичного деплоя: поставить перед контейнером reverse-proxy с HTTPS
-(Caddy/nginx), сменить пароль, учесть, что токен хозяина бессрочный (меняется вместе с паролем), а статус заказа
-`GET /api/orders/:id` публичный и id последовательные.
